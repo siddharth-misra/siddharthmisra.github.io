@@ -295,6 +295,12 @@ img { max-width: 100%; display: block; }
     gap: 12px;
     justify-content: center;
     flex-wrap: wrap;
+    margin-bottom: 12px;
+}
+
+.hero-location {
+    display: flex;
+    justify-content: center;
     margin-bottom: 36px;
 }
 
@@ -314,6 +320,16 @@ img { max-width: 100%; display: block; }
 .cert-badge svg {
     color: var(--green);
     flex-shrink: 0;
+}
+
+.cert-badge--location {
+    background: var(--accent-bg);
+    border-color: var(--accent-border);
+    color: var(--accent);
+}
+
+.cert-badge--location svg {
+    color: var(--accent);
 }
 
 .hero-actions {
@@ -414,6 +430,12 @@ img { max-width: 100%; display: block; }
 /* ===== Sections ===== */
 .section {
     padding: 88px 0;
+}
+
+/* Improve first render by skipping below-the-fold layout/paint until needed */
+.section:not(#about) {
+    content-visibility: auto;
+    contain-intrinsic-size: 700px;
 }
 
 .section-alt {

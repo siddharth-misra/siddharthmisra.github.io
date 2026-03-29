@@ -1,6 +1,6 @@
 const themeToggle = document.getElementById('themeToggle');
-const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
-const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+const prefersDark = globalThis.matchMedia('(prefers-color-scheme: dark)');
+const prefersReducedMotion = globalThis.matchMedia('(prefers-reduced-motion: reduce)');
 const nav = document.getElementById('nav');
 const navToggle = document.getElementById('navToggle');
 const navLinks = document.getElementById('navLinks');
@@ -78,11 +78,26 @@ function updateNavScrollState() {
         return;
     }
 
-    nav.classList.toggle('scrolled', window.scrollY > 50);
+    nav.classList.toggle('scrolled', globalThis.scrollY > 50);
+}
+
+let navTicking = false;
+
+function onScroll() {
+    if (navTicking) {
+        return;
+    }
+
+    navTicking = true;
+    requestAnimationFrame(() => {
+        updateNavScrollState();
+        updateActiveNav();
+        navTicking = false;
+    });
 }
 
 if (nav) {
-    window.addEventListener('scroll', updateNavScrollState);
+    globalThis.addEventListener('scroll', onScroll, { passive: true });
     updateNavScrollState();
 }
 
@@ -107,7 +122,11 @@ if (navToggle && navLinks) {
 }
 
 function updateActiveNav() {
-    const scrollY = window.scrollY + 100;
+    if (!navLinks) {
+        return;
+    }
+
+    const scrollY = globalThis.scrollY + 100;
 
     sections.forEach((section) => {
         const top = section.offsetTop;
@@ -123,14 +142,13 @@ function updateActiveNav() {
     });
 }
 
-window.addEventListener('scroll', updateActiveNav);
 updateActiveNav();
 
 function revealAllFadeElements() {
     fadeElements.forEach((element) => element.classList.add('visible'));
 }
 
-if ('IntersectionObserver' in window) {
+if ('IntersectionObserver' in globalThis) {
     const revealObserver = new IntersectionObserver(
         (entries) => {
             entries.forEach((entry) => {
@@ -177,7 +195,7 @@ function animateCounters() {
 }
 
 if (statsSection && counters.length > 0) {
-    if ('IntersectionObserver' in window) {
+    if ('IntersectionObserver' in globalThis) {
         const statsObserver = new IntersectionObserver(
             (entries) => {
                 entries.forEach((entry) => {

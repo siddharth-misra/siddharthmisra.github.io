@@ -11,6 +11,8 @@
     <meta property="og:type" content="website">
     <meta name="color-scheme" content="light dark">
     <script>document.documentElement.classList.add('js');</script>
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -59,6 +61,12 @@
                 <span class="cert-badge">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
                     Certified SAFe 6 Agilist
+                </span>
+            </div>
+            <div class="hero-location animate-in delay-3">
+                <span class="cert-badge cert-badge--location">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    Based in Pune, Maharashtra, India
                 </span>
             </div>
             <div class="hero-actions animate-in delay-4">
@@ -324,7 +332,7 @@
                         <div class="project-label">Loan Origination Platform (LOP)</div>
                         <p class="project-desc">End-to-end loan origination system for banks, NBFCs, and fintechs &mdash; covering the full lifecycle from customer application and KYC through credit underwriting, decisioning, e-sign, and loan disbursal. Built as a cloud-native, microservices-based platform designed for high throughput and regulatory compliance.</p>
                         <div class="tech-stack">
-                            <span>Java</span><span>Spring Boot</span><span>Angular</span><span>AWS</span><span>PostgreSQL</span><span>MongoDB</span><span>Kafka</span><span>SQS</span><span>Camunda</span><span>Drools</span><span>Docker</span><span>OAuth2 / JWT</span>
+                            <span>Java</span><span>Spring Boot</span><span>Angular</span><span>AWS</span><span>PostgreSQL</span><span>MongoDB</span><span>Kafka</span><span>SQS</span><span>Docker</span><span>OAuth2 / JWT</span>
                         </div>
 
                         <div class="modules-grid">
@@ -338,7 +346,7 @@
                             </div>
                             <div class="module">
                                 <strong>Credit Underwriting Engine</strong>
-                                <p>Bureau integrations (CIBIL, Experian), rule-based eligibility engine (Drools), income analysis, and risk scoring for automated decisioning</p>
+                                <p>Bureau integrations (CIBIL, Experian), rule-based eligibility engine, income analysis, and risk scoring for automated decisioning</p>
                             </div>
                             <div class="module">
                                 <strong>Decision & Offer Engine</strong>
@@ -350,14 +358,14 @@
                             </div>
                             <div class="module">
                                 <strong>Disbursement & Workflow</strong>
-                                <p>Camunda-orchestrated disbursement flows &mdash; fund transfer to customer account or third-party (dealer/seller), event-driven status tracking via Kafka</p>
+                                <p>Workflow-orchestrated disbursement flows &mdash; fund transfer to customer account or third-party (dealer/seller), event-driven status tracking via Kafka</p>
                             </div>
                         </div>
 
                         <ul class="timeline-details">
                             <li>Lead a team of <strong>16+ engineers</strong> across frontend, backend, and platform &mdash; driving end-to-end delivery of the LOP from architecture to production.</li>
                             <li>Designed the microservices architecture &mdash; decomposing the loan lifecycle into independently deployable services with event-driven communication via Kafka and SQS.</li>
-                            <li>Established workflow orchestration using <strong>Camunda</strong> for loan processing flows and <strong>Drools</strong> for configurable credit eligibility rules.</li>
+                            <li>Established workflow orchestration for loan processing flows and configurable credit eligibility rules.</li>
                             <li>Integrated third-party APIs for KYC (UIDAI, CKYC), credit bureaus (CIBIL, Experian), and e-sign providers with retry, idempotency, and audit logging.</li>
                             <li>Drive AI-first initiatives &mdash; evaluating LLM-based document extraction and agentic workflows to accelerate underwriting and reduce manual intervention.</li>
                             <li>Lead Agile / SAFe ceremonies, code reviews, and engineering standards across the team &mdash; ensuring delivery quality and system observability.</li>
@@ -433,6 +441,7 @@
                                 <span class="location">Pune, India</span>
                             </div>
                         </div>
+                        <div class="project-label">Finserv MARKETS &mdash; Payments, Rewards, and Compliance Platform</div>
                         <p class="project-desc">Led design and development of high-throughput payment, rewards, and compliance systems for a fast-growing fintech platform.</p>
                         <div class="tech-stack">
                             <span>Java</span><span>Spring Boot</span><span>Hibernate</span><span>PostgreSQL</span><span>MySQL</span><span>AWS</span><span>Angular</span><span>REST APIs</span>
@@ -650,7 +659,25 @@
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
                     </div>
                     <div>
-                        <h4>On the Spot, Star Performer, Star of the Month</h4>
+                        <h4>On the Spot</h4>
+                        <p>Tata Consultancy Services</p>
+                    </div>
+                </div>
+                <div class="award-card fade-up">
+                    <div class="award-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
+                    </div>
+                    <div>
+                        <h4>Star Performer</h4>
+                        <p>Tata Consultancy Services</p>
+                    </div>
+                </div>
+                <div class="award-card fade-up">
+                    <div class="award-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
+                    </div>
+                    <div>
+                        <h4>Star of the Month</h4>
                         <p>Tata Consultancy Services</p>
                     </div>
                 </div>
@@ -674,6 +701,6 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </body>
 </html>

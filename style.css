@@ -269,13 +269,28 @@ img { max-width: 100%; display: block; }
     margin-bottom: 28px;
 }
 
+.hero-title + .hero-badge {
+    margin-top: 0;
+    margin-bottom: 12px;
+}
+
 .hero-title {
     font-size: clamp(2.5rem, 7vw, 4.5rem);
     font-weight: 800;
     line-height: 1.1;
     letter-spacing: -2px;
-    margin-bottom: 20px;
+    margin-bottom: 12px;
     color: var(--text-primary);
+}
+
+.hero-org {
+    font-size: 0.98rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin: 0 auto 22px;
+    max-width: 580px;
+    text-align: center;
+    line-height: 1.45;
 }
 
 .gradient-text {
@@ -295,6 +310,12 @@ img { max-width: 100%; display: block; }
     gap: 12px;
     justify-content: center;
     flex-wrap: wrap;
+    margin-bottom: 12px;
+}
+
+.hero-location {
+    display: flex;
+    justify-content: center;
     margin-bottom: 36px;
 }
 
@@ -314,6 +335,16 @@ img { max-width: 100%; display: block; }
 .cert-badge svg {
     color: var(--green);
     flex-shrink: 0;
+}
+
+.cert-badge--location {
+    background: var(--accent-bg);
+    border-color: var(--accent-border);
+    color: var(--accent);
+}
+
+.cert-badge--location svg {
+    color: var(--accent);
 }
 
 .hero-actions {
@@ -414,6 +445,12 @@ img { max-width: 100%; display: block; }
 /* ===== Sections ===== */
 .section {
     padding: 88px 0;
+}
+
+/* Improve first render by skipping below-the-fold layout/paint until needed */
+.section:not(#about) {
+    content-visibility: auto;
+    contain-intrinsic-size: 700px;
 }
 
 .section-alt {
@@ -897,13 +934,14 @@ img { max-width: 100%; display: block; }
 
 .contact-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 12px;
     max-width: 720px;
     margin: 0 auto 28px;
 }
 
 .contact-card {
+    min-width: 0;
     display: flex;
     align-items: center;
     gap: 12px;
@@ -915,6 +953,10 @@ img { max-width: 100%; display: block; }
     transition: var(--transition);
     font-size: 0.85rem;
     font-weight: 500;
+}
+
+.contact-card span {
+    overflow-wrap: anywhere;
 }
 
 .contact-card:hover {
@@ -969,6 +1011,7 @@ img { max-width: 100%; display: block; }
 .delay-2 { animation-delay: 0.24s; }
 .delay-3 { animation-delay: 0.36s; }
 .delay-4 { animation-delay: 0.48s; }
+.delay-5 { animation-delay: 0.60s; }
 
 @keyframes fadeIn {
     to {
@@ -1080,7 +1123,6 @@ html.js .fade-up.visible {
     .section-title { font-size: 1.5rem; margin-bottom: 40px; }
     .skill-row { grid-template-columns: 140px 1fr; padding: 12px 16px; }
     .awards-grid { grid-template-columns: 1fr; }
-    .contact-grid { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 480px) {
@@ -1090,6 +1132,7 @@ html.js .fade-up.visible {
     .skill-label { font-size: 0.75rem; }
     .education-grid { grid-template-columns: 1fr; }
     .stat-number { font-size: 1.75rem; }
+    .contact-card { padding: 14px 12px; font-size: 0.8rem; }
 }
 
 /* ===== Print ===== */

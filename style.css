@@ -81,6 +81,10 @@ body {
     overflow-x: hidden;
 }
 
+body.menu-open {
+    overflow: hidden;
+}
+
 a {
     color: var(--accent);
     text-decoration: none;
@@ -111,12 +115,12 @@ img { max-width: 100%; display: block; }
     background: rgba(255, 255, 255, 0.92);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid transparent;
+    transition: border-color var(--transition), box-shadow var(--transition);
 }
 
 [data-theme="dark"] .nav {
     background: rgba(15, 17, 23, 0.92);
-    border-bottom: 1px solid transparent;
-    transition: border-color var(--transition), box-shadow var(--transition);
 }
 
 .nav.scrolled {
@@ -193,6 +197,15 @@ img { max-width: 100%; display: block; }
 
 [data-theme="dark"] .theme-toggle .icon-sun { display: block; }
 [data-theme="dark"] .theme-toggle .icon-moon { display: none; }
+
+.nav-toggle:focus-visible,
+.theme-toggle:focus-visible,
+.nav-links a:focus-visible,
+.btn:focus-visible,
+.contact-card:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+}
 
 .nav-links {
     display: flex;
@@ -964,15 +977,37 @@ img { max-width: 100%; display: block; }
     }
 }
 
-.fade-up {
+html.js .fade-up {
     opacity: 0;
     transform: translateY(24px);
     transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
-.fade-up.visible {
+html.js .fade-up.visible {
     opacity: 1;
     transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+
+    .scroll-indicator {
+        animation: none;
+    }
+
+    html.js .fade-up {
+        opacity: 1;
+        transform: none;
+    }
 }
 
 /* ===== Responsive ===== */

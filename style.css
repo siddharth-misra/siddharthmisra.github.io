@@ -19,8 +19,8 @@
     --amber: #d97706;
     --amber-bg: #fffbeb;
     --error: #ef4444;
-    --error-bg: color-mix(in srgb, #ef4444 10%, transparent);
-    --error-border: color-mix(in srgb, #ef4444 25%, transparent);
+    --error-bg: rgba(239, 68, 68, 0.10);
+    --error-border: rgba(239, 68, 68, 0.25);
     --amber-border: #fde68a;
     --text-on-accent: #ffffff;
     --cert-border: #a7f3d0;
@@ -61,8 +61,8 @@
     --amber: #fbbf24;
     --amber-bg: #2d1f07;
     --error: #f87171;
-    --error-bg: color-mix(in srgb, #f87171 10%, transparent);
-    --error-border: color-mix(in srgb, #f87171 25%, transparent);
+    --error-bg: rgba(248, 113, 113, 0.10);
+    --error-border: rgba(248, 113, 113, 0.25);
     --amber-border: #b45309;
     --cert-border: #065f46;
     --accent-2-border: #164e63;
@@ -1160,7 +1160,7 @@ a.cert-badge:hover {
 .form-group textarea:focus {
     border-color: var(--accent);
     background: var(--bg-card);
-    box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 14%, transparent);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.14);
 }
 
 /* valid */
@@ -1173,7 +1173,7 @@ a.cert-badge:hover {
 .form-group.has-error input,
 .form-group.has-error textarea {
     border-color: var(--error);
-    box-shadow: 0 0 0 3px color-mix(in srgb, var(--error) 12%, transparent);
+    box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.12);
 }
 
 .field-error {
@@ -1235,7 +1235,7 @@ a.cert-badge:hover {
 
 .form-submit:hover:not(:disabled) {
     background: var(--accent-dark);
-    box-shadow: 0 4px 14px color-mix(in srgb, var(--accent) 38%, transparent);
+    box-shadow: 0 4px 14px rgba(37, 99, 235, 0.38);
     transform: translateY(-1px);
 }
 
@@ -1250,7 +1250,7 @@ a.cert-badge:hover {
     display: none;
     width: 15px;
     height: 15px;
-    border: 2px solid color-mix(in srgb, var(--text-on-accent) 30%, transparent);
+    border: 2px solid rgba(255, 255, 255, 0.30);
     border-top-color: var(--text-on-accent);
     border-radius: 50%;
     animation: spin 0.65s linear infinite;
@@ -1303,7 +1303,7 @@ a.cert-badge:hover {
     align-items: center;
     justify-content: center;
     margin-bottom: 4px;
-    border: 2px solid color-mix(in srgb, var(--green) 30%, transparent);
+    border: 2px solid rgba(16, 185, 129, 0.30);
 }
 
 .form-success-state h4 {
@@ -1356,7 +1356,7 @@ a.cert-badge:hover {
     align-items: center;
     gap: 12px;
     background: var(--bg-card);
-    border: 1px solid color-mix(in srgb, var(--green) 35%, transparent);
+    border: 1px solid rgba(16, 185, 129, 0.35);
     border-radius: var(--radius);
     padding: 14px 16px;
     box-shadow: var(--shadow-lg);

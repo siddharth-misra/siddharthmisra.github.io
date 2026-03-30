@@ -764,7 +764,7 @@
         async src="//gc.zgo.at/count.js"></script>
     <script type="module">
         try {
-            const r = await fetch('https://siddharth-misra.goatcounter.com/counter//.json');
+            const r = await fetch('https://siddharth-misra.goatcounter.com/counter/%2F.json');
             const d = await r.json();
             document.getElementById('visitor-count').textContent = d.count;
         } catch {}

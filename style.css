@@ -143,6 +143,18 @@ img { max-width: 100%; display: block; }
     font-weight: 800;
     color: var(--accent);
     letter-spacing: -0.5px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.nav-logo-img {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--accent-border);
+    flex-shrink: 0;
 }
 
 .nav-logo:hover { color: var(--accent-dark); }
@@ -257,7 +269,7 @@ img { max-width: 100%; display: block; }
     align-items: center;
     justify-content: center;
     position: relative;
-    padding: calc(var(--nav-height) + 48px) 0 80px;
+    padding: calc(var(--nav-height) + 48px) 0 32px;
     background: linear-gradient(180deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
 }
 
@@ -517,7 +529,7 @@ a.cert-badge:hover {
 
 /* ===== Sections ===== */
 .section {
-    padding: 56px 0;
+    padding: 40px 0;
 }
 
 /* Improve first render by skipping below-the-fold layout/paint until needed */
@@ -1190,6 +1202,10 @@ a.cert-badge:hover {
 .footer p {
     font-size: 0.78rem;
     color: var(--text-muted);
+}
+
+.visitor-count {
+    margin-top: 6px;
 }
 
 /* ===== Animations ===== */

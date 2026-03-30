@@ -63,7 +63,10 @@
     <!-- Navigation -->
     <nav class="nav" id="nav" aria-label="Primary">
         <div class="nav-inner">
-            <a href="#hero" class="nav-logo">Siddharth Misra</a>
+            <a href="#hero" class="nav-logo">
+                <img src="Siddharth-Misra.png" alt="Siddharth Misra" class="nav-logo-img">
+                Siddharth Misra
+            </a>
             <button class="nav-toggle" id="navToggle" type="button" aria-label="Toggle menu" aria-controls="navLinks" aria-expanded="false">
                 <span></span><span></span><span></span>
             </button>
@@ -145,9 +148,6 @@
                     <span class="stat-label">Organizations</span>
                 </div>
             </div>
-        </div>
-        <div class="scroll-indicator">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="7 13 12 18 17 13"/><polyline points="7 6 12 11 17 6"/></svg>
         </div>
     </section>
 
@@ -751,15 +751,23 @@
         </div>
     </section>
 
-    <!-- Projects Section removed - content lives in Experience section -->
-
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <p>&copy; 2026 Siddharth Misra. All rights reserved.</p>
+            <p class="visitor-count">Visitors: <span id="visitor-count">—</span></p>
         </div>
     </footer>
 
     <script src="script.js" defer></script>
+    <script data-goatcounter="https://siddharth-misra.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+    <script type="module">
+        try {
+            const r = await fetch('https://siddharth-misra.goatcounter.com/counter//.json');
+            const d = await r.json();
+            document.getElementById('visitor-count').textContent = d.count;
+        } catch {}
+    </script>
 </body>
 </html>

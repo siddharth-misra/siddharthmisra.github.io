@@ -13,7 +13,7 @@ SUMMARY
 ================================================================================
 
 Engineering Manager with 13+ years of experience building scalable, cloud-native
-platforms across fintech, healthcare SaaS, trade finance, and enterprise domains.
+platforms across fintech, healthcare SaaS, trade finance, and ed-tech domains.
 Currently driving AI-first engineering — agentic workflows, LLM integrations, and
 intelligent automation.
 
